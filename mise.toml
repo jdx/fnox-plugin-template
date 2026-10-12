@@ -1,0 +1,15 @@
+[tools]
+python = "3"
+stylua = "latest"
+
+[tasks.test]
+description = "Run the plugin through fnox against a mock API"
+run = "test/run.sh"
+
+[tasks.fmt]
+description = "Format Lua sources"
+run = "stylua ."
+
+[tasks.lint]
+description = "Check Lua formatting"
+run = "stylua --check ."

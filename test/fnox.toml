@@ -1,0 +1,11 @@
+# Config used by test/run.sh, which serves test/fixtures on this port.
+root = true
+
+[providers.example]
+type = "lua"
+plugin = ".." # this repository, relative to this file
+options = { endpoint = "http://127.0.0.1:18765", token_env = "EXAMPLE_TOKEN" }
+
+[secrets]
+DATABASE_URL = { provider = "example", value = "database-url" }
+MISSING = { provider = "example", value = "missing" }
